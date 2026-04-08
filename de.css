@@ -1,2 +1,143 @@
-/* COLOR */
+:root {
+    /* FONT SIZE */
+    --text-sm: 1.2rem;
+    --text-base: 1.4rem;
+    --text-paragraph: 1.2rem;
+    --text-h5: 2.4rem;
+    --text-h4: 3.2rem;
+    --text-h3: 4rem;
+    --text-h2: 4.8rem;
+    --text-h1: 6.2rem;
 
+    /* FONT WEIGHT */
+    --font-weight-normal: 400;
+    /* --font-weight-bold: 700; */
+
+    /* LINE HEIGHTS */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+
+    /* LETTER SPACING */
+    --letter-spacing-tight: -2px;
+
+    /* FONT FAMILY */
+    --font-family: 'Monospace', monospace;
+
+    /* COLORS */
+    --white: #ffffff;
+    --black: #000000;
+    
+    /* MISCELLANEOUS */
+    --nav-height: 10rem; /* Update the value in the flexbox topic */
+}
+
+body {
+    background-color: var(--black);
+}
+
+/* ----------------------- BUTTONS ----------------------- */
+
+.btn {
+    min-width: 110px;
+    height: 45px;
+    font-size: var(--text-base);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: none;
+}
+
+.btn-primary:link, .btn-primary:visited {
+    color: var(--white);
+    background-color: transparent;
+    border: 2px dotted var(--white);
+    transition: 0.5s;
+    cursor: none;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    color: var(--white);
+    background-color: transparent;
+    border: 2px dotted var(--white);
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 3px 6px var(--grey-base);
+    cursor: none;
+}
+
+.btn-primary-outline:link, .btn-primary-outline:visited {
+    color: var(--white);
+    background-color: transparent;
+    border: 2px dotted var(--white);
+    transition: 0.5s;
+}
+
+.btn-primary-outline:hover, .btn-primary-outline:active {
+    color: var(white);
+    background-color: transparent;
+    border: 2px dotted var(white);
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 3px 6px var(--grey-base);
+}
+
+.btn-secondary {
+    display: flex;              /* Flexbox für Zentrierung */
+    justify-content: center;    /* horizontal zentrieren */
+    align-items: center;        /* vertikal zentrieren */
+    box-sizing: border-box;     /* padding + border korrekt berechnen */
+    padding: 0.5rem 1rem;       /* Innenabstand */
+    text-decoration: none;      /* Unterstrich entfernen */
+    background-color: transparent;
+    border: 2px solid var(--white); /* gepunkteter Rahmen */
+    color: var(--white);        /* Textfarbe */
+    transition: 0.5s;
+    cursor: none;
+}
+
+.btn-secondary:link, .btn-secondary:visited {
+    background-color: transparent;
+    border: 2px solid var(white);
+    border-color: white;
+    transition: 0.5s;
+    cursor: none;
+}
+
+.btn-secondary:hover, .btn-secondary:active {
+    background-color: transparent;
+    border: 2px solid var(white);
+    transform: scale(1.05, 1.05);
+    /* box-shadow: 0px 3px 6px var(--grey-base); */
+    transform: scale(1.05);
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.3); /* harte Schatten */
+    cursor: none;
+}
+
+/* ----------------------- CARD ----------------------- */
+
+.main-card {
+    width: 90%;
+    max-width: 1500px;
+    height: 900px;          
+    margin: 8rem auto;
+    padding: 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+
+    border: 3px solid var(--white);
+    border-radius: 12px;       
+    
+    background: transparent; 
+}
+
+/* ----------------------- HEADER ----------------------- */
+
+/* ----------------------- MAIN ----------------------- */
+
+/* ----------------------- FOOTER ----------------------- */
+
+.footer {
+    display: flex;
+    font-style: none;
+}
