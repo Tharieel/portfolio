@@ -35,8 +35,9 @@ body {
     background-color: var(--black);
 }
 
-h1, h2, h3, p, ul {
-    margin: 0; /* reset */
+h1, h2, h3, p, ul, li {
+    margin: 0;
+    text-decoration: none;
 }
 
 a {
@@ -49,45 +50,45 @@ a {
 /* ----------------------- BUTTONS ----------------------- */
 
 .btn {
-    min-width: 110px;
+    min-width: 100px;
     height: 45px;
-    font-size: var(--text-base);
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    cursor: none;
+    background-color: transparent;
+    border: 2px solid var(--white);
+
 }
 
 .btn-primary:link, .btn-primary:visited {
     color: var(--white);
     background-color: transparent;
-    border: 2px dotted var(--white);
+    border: 2px solid var(--white);
     transition: 0.5s;
-    cursor: none;
 }
 
 .btn-primary:hover, .btn-primary:active {
     color: var(--white);
     background-color: transparent;
-    border: 2px dotted var(--white);
+    border: 2px solid var(--white);
     transform: scale(1.05, 1.05);
     box-shadow: 0px 3px 6px var(--grey-base);
-    cursor: none;
 }
 
 .btn-primary-outline:link, .btn-primary-outline:visited {
     color: var(--white);
     background-color: transparent;
-    border: 2px dotted var(--white);
+    border: 2px solid var(--white);
     transition: 0.5s;
 }
 
 .btn-primary-outline:hover, .btn-primary-outline:active {
     color: var(white);
     background-color: transparent;
-    border: 2px dotted var(white);
+    border: 2px solid var(white);
     transform: scale(1.05, 1.05);
     box-shadow: 0px 3px 6px var(--grey-base);
 }
@@ -100,28 +101,24 @@ a {
     padding: 0.5rem 1rem;       /* Innenabstand */
     text-decoration: none;      /* Unterstrich entfernen */
     background-color: transparent;
-    border: 2px solid var(--white); /* gepunkteter Rahmen */
+    border: 2px dotted var(--white); /* gepunkteter Rahmen */
     color: var(--white);        /* Textfarbe */
     transition: 0.5s;
-    cursor: none;
 }
 
 .btn-secondary:link, .btn-secondary:visited {
     background-color: transparent;
-    border: 2px solid var(white);
+    border: 2px dotted var(white);
     border-color: white;
     transition: 0.5s;
-    cursor: none;
 }
 
 .btn-secondary:hover, .btn-secondary:active {
     background-color: transparent;
-    border: 2px solid var(white);
+    border: 2px dotted var(white);
     transform: scale(1.05, 1.05);
-    /* box-shadow: 0px 3px 6px var(--grey-base); */
     transform: scale(1.05);
     box-shadow: 0px 3px 6px rgba(0,0,0,0.3); /* harte Schatten */
-    cursor: none;
 }
 
 /* ----------------------- CARD ----------------------- */
@@ -137,7 +134,8 @@ a {
     flex-direction: column;
 
     border: 3px solid var(--white);
-    border-radius: 12px;       
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px var(--white);
     
     background: transparent; 
 }
@@ -171,16 +169,35 @@ a {
 
 /* ----------------------- MAIN ----------------------- */
 
-.main-section {
+.main-section{
     display: flex;
-    height: 1000px;
+    flex-direction: column;
+    margin: auto 0;
+    gap: 7rem;
 }
 
-.hero-text {
+.btn1 {
     display: flex;
+    margin-left: 30rem;
+}
+
+.hero-text-btn2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin: auto 0;
     color: var(--white);
     font-size: 3rem;
+}
+
+.btn2 {
+    margin-left: auto;
+    margin-right: 30rem;
+}
+
+.btn3 {
+    display: flex;
+    margin-left: 30rem;
 }
 
 /* ----------------------- FOOTER ----------------------- */
@@ -188,6 +205,7 @@ a {
 .footer {
     display: flex;
     align-items: center;
+    margin-top: auto;
 }
 
 .links {
