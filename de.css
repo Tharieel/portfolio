@@ -35,6 +35,17 @@ body {
     background-color: var(--black);
 }
 
+h1, h2, h3, p, ul {
+    margin: 0; /* reset */
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+    display: inline-block;
+    transition: transform 0.8s ease;
+}
+
 /* ----------------------- BUTTONS ----------------------- */
 
 .btn {
@@ -120,7 +131,7 @@ body {
     max-width: 1500px;
     height: 900px;          
     margin: 8rem auto;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     
     display: flex;
     flex-direction: column;
@@ -133,11 +144,84 @@ body {
 
 /* ----------------------- HEADER ----------------------- */
 
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo-name {
+    display: flex;
+    color: var(--white);
+    font-size: 0.7rem;
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.nav-icons {
+    display: flex;         
+    align-items: center;   
+    justify-content: center;
+    width: 23px;
+}
+
 /* ----------------------- MAIN ----------------------- */
+
+.main-section {
+    display: flex;
+    height: 1000px;
+}
+
+.hero-text {
+    display: flex;
+    margin: auto 0;
+    color: var(--white);
+    font-size: 3rem;
+}
 
 /* ----------------------- FOOTER ----------------------- */
 
 .footer {
     display: flex;
-    font-style: none;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
+.Impressum {
+    margin-left: auto;
+    display: flex;
+}
+
+/* ------ TOOLTIP ------ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    position: absolute;
+    top: 58px;
+    left: -400%;
+    transform: translateX(-50%);
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    padding: 0.3rem 0.6rem;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    display: none;
+}
+
+.tooltip:hover .tooltip-text {
+    display: block;
 }
