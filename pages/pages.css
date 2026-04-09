@@ -1,0 +1,45 @@
+
+.main-section-pages {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin-top: 15rem;
+    margin-left: auto;
+    gap: 2rem;
+}
+
+.nav-pages p {
+    color: var(--white);
+    text-align: right;
+    text-decoration-line: line-through;
+}
+
+.btn-projects-topics {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    font-size: 4rem;
+    margin: auto 0;
+}
+
+.btn-webdev {
+    margin-left: 10rem;
+}
+
+.btn-datascience {
+    margin-left: 30rem;
+}
+
+.btn-other {
+    margin-left: 50rem;
+}
+
+.contact-form {
+    
+}
