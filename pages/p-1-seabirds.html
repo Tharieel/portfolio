@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../de.css">
+    <link rel="stylesheet" href="pages.css">
+    <title>Katharina Kay <> Projekte</title>
+</head>
+<body>
+    <div clas="card-wrapper">
+        <div class="card-code-python">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script>hljs.highlightAll();</script>
+
+            <pre><code class="language-python">
+            import pandas as pd
+            import plotly.graph_objects as go
+            from plotly.subplots import make_subplots
+            from sklearn.cluster import DBSCAN
+            from scipy.spatial import ConvexHull
+            import numpy as np
+
+            # ------------------------------
+            # CSV/TSV laden
+            # ------------------------------
+            df = pd.read_csv("raw/Occurrence.tsv", sep='\t', low_memory=False)
+            df = df.dropna(subset=['scientificName', 'eventDate', 'decimalLatitude', 'decimalLongitude'])
+            df['eventDate'] = pd.to_datetime(df['eventDate'])
+            df['year'] = df['eventDate'].dt.year
+
+            # Mapping wissenschaftlicher Name → deutscher Name
+            name_map = {
+                "Larus novaehollandiae": "Silbermöwe",
+                "Sterna bergii": "Weißbrustseeschwalbe",
+                "Egretta sacra": "Rotschnabelreiher",
+                "Sterna sumatrana": "Sumatra-Seeschwalbe",
+                "Sula leucogaster": "Braunschwingen-Tölpel",
+                "Anous minutus": "Schwarzfußtölpel",
+                "Onychoprion anaethetus": "Graukopftölpel",
+                "Anous stolidus": "Noddi-Tölpel",
+                "Fregata ariel": "Fregattvogel",
+                "Sterna bengalensis": "Bengalseeschwalbe"
+            }
+            df["scientificName"] = df["scientificName"].apply(
+                lambda x: f"{x} ({name_map[x]})" if x in name_map else x
+            )
+
+            # ------------------------------
+            # DBSCAN Clustering
+            # ------------------------------
+            coords = df[['decimalLatitude', 'decimalLongitude']].to_numpy()
+            clustering = DBSCAN(eps=1, min_samples=2).fit(coords)
+            df = pd.concat([df, pd.Series(clustering.labels_, name='cluster')], axis=1)
+            df['cluster_label'] = df['cluster'].apply(lambda x: 'Noise' if x == -1 else f'Hotspot {x}')
+
+            # ------------------------------
+            # Subplot: Scatter + Heatmap-Inset
+            # ------------------------------
+
+            fig = make_subplots()
+
+            # Hauptscatter: SST-farbig (nur SST bekommt Colorbar!)
+            scatter_trace = go.Scatter(
+                x=df["decimalLongitude"],
+                y=df["decimalLatitude"],
+                mode="markers",
+                marker=dict(
+                    color=df["sst"],
+                    colorscale="Plasma",
+                    size=8,
+                    line=dict(width=0),
+                    colorbar=dict(
+                        title="SST (°C)",
+                        title_side="right",
+                        tickfont=dict(size=12),
+                        lenmode="fraction",
+                        len=1,
+                        thickness=20
+                    )
+                ),
+                hovertext=df["scientificName"],
+                hoverinfo="text",
+                showlegend=False  # Keine Legende für SST
+            )
+
+            fig.add_trace(scatter_trace)
+
+            # Cluster-Hüllkurven hinzufügen, ohne Einfluss auf Colorbar
+            hotspot_labels = [l for l in df['cluster_label'].unique() if l != 'Noise']
+            for label in hotspot_labels:
+                cluster_points = df[df['cluster_label'] == label][['decimalLongitude','decimalLatitude']].to_numpy()
+                if len(cluster_points) < 3:
+                    continue
+                if np.linalg.matrix_rank(cluster_points - cluster_points[0]) < 2:
+                    continue
+                hull = ConvexHull(cluster_points)
+                hull_points = cluster_points[hull.vertices]
+                hull_points = np.append(hull_points, [hull_points[0]], axis=0)
+                fig.add_trace(go.Scatter(
+                    x=hull_points[:,0],
+                    y=hull_points[:,1],
+                    fill='toself',
+                    fillcolor='rgba(0,0,255,0.05)',  # leicht transparent blau
+                    line=dict(color='rgba(0,0,0,0)'),
+                    name=f'{label} Area',
+                    hoverinfo='skip',
+                    showlegend=False             # Kein Eintrag in Legende
+                ))
+
+            # Heatmap-Inset links unten (nur Dichte, keine SST)
+            heatmap = go.Histogram2d(
+                x=df["decimalLongitude"],
+                y=df["decimalLatitude"],
+                colorscale="Viridis",
+                opacity=0.8,
+                showscale=False
+            )
+            fig.add_trace(heatmap)
+            fig.data[-1].update(xaxis="x2", yaxis="y2")
+
+            # ------------------------------
+            # Layout Haupt- und Inset-Achse
+            # ------------------------------
+            fig.update_layout(
+                plot_bgcolor="rgba(46,77,144,0.3)",
+                title=dict(
+                    text="Seabird Observations – Great Barrier Reef 1991-1996 (Interactive)",
+                    x=0.5,
+                    font=dict(size=20)
+                ),
+                xaxis=dict(domain=[0, 1], title="Longitude (Längengrad)", tickfont=dict(size=14)),
+                yaxis=dict(domain=[0, 1], title="Latitude (Breitengrad)", tickfont=dict(size=14)),
+
+                # Inset-Achse Heatmap links unten
+                xaxis2=dict(domain=[0.02, 0.28], anchor="y2", showgrid=False, showticklabels=False),
+                yaxis2=dict(domain=[0.02, 0.28], anchor="x2", showgrid=False, showticklabels=False),
+
+                width=900,
+                height=600,
+                legend_title_text='Cluster'
+            )
+
+            fig.show()
+
+            fig.write_html("plots/seabird_combined_interactive.html")
+            </code></pre>
+        </div>
+    </div>
+
+    <div class="main-card">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="logo-name">
+                <h2>Katharina Kay <> Projekte: DataScience - Seevögel am Great Barrier Reef</h2>
+            </div>
+
+            <div class="header-right">
+                <li>de</li>
+                <li class="tooltip"><img class="nav-icons" src="../images/svg/earth-outline-weiß.png" alt="World Logo"></li>
+                <li class="tooltip"><img class="nav-icons" src="../images/svg/flashlight-outline-weiß.png" alt="Darklight Logo"></li>
+            </div>
+
+        </header>
+        
+        <!-- MAIN -->
+        <section class="main-section-pages">
+
+            <div class="p-1-1">
+                <div class="plot-top">
+                    <iframe src="../images/plots/seabird_combined_interactive.html" class="plot-iframe"></iframe>
+                </div>
+
+                <div class="description">
+                    <p>SST (°C): Sea Surface Temperature (Meeresoberflächentemperatur) in °C. Larus novaehollandiae: Silbermöwe, 
+                        Sterna bergii: Weißbrustseeschwalbe, Egretta sacra: Rotschnabelreiher, Sterna sumatrana: Sumatra-Seeschwalbe, 
+                        Sula leucogaster: Braunschwingen-Tölpel, Anous minutus: Schwarzfußtölpel, Onychoprion anaethetus: Graukopftölpel, 
+                        Anous stolidus: Noddi-Tölpel, Fregata ariel: Fregattvogel, Sterna bengalensis: Bengalseeschwalbe 
+                    </p>
+                </div>
+            </div>
+
+            <div class="nav-pages">
+                <div class="btn0-pages">
+                    <button class="btn btn-secondary"><a href="../de.html">Home <</a></button>
+                </div>
+                <div class="btn1-pages">
+                    <button class="btn btn-secondary"><a href="contact.html">Kontakt <</a></button>
+                </div>
+                <div class="btn2-pages">
+                    <button class="btn btn-secondary"><a href="p-projects-main.html">Projekte <</a></button>
+                </div>
+                <div class="btn3-pages">
+                    <button class="btn btn-secondary"><a href="blog.html">Blog <</a></button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <div class="links">
+                <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                <li><a href="https://github.com/">Github</a></li>
+                <li><a href="https://www.instagram.com/?hl=de">Instagram</a></li>
+            </div>
+
+            <div class="email-impressum">
+                <li><a href="mailto:thari.business@protonmail.com">thari.business@protonmail.com</a></li>
+                <li><></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </div>
+
+        </footer>
+        
+    </div>
+
+    <div class="custom-cursor"></div>
+    <script src="../de.js"></script>
+
+</body>
+</html>

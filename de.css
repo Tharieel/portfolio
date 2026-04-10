@@ -32,13 +32,14 @@
 }
 
 * {
-  cursor: none;
+    cursor: none;
 }
 
 body {
     background-color: var(--black);
     font-family: var(--font-family);
     cursor: none;
+    margin-bottom: 10rem;
 }
 
 h1, h2, h3, p, ul, li {
@@ -202,7 +203,6 @@ a {
 
 .main-card {
     width: 90%;
-    max-width: 1500px;
     height: 900px;          
     margin: 8rem auto;
     padding: 1rem 1.5rem;
@@ -216,7 +216,6 @@ a {
     
     background: transparent;
     z-index: 1;
-
 }
 
 /* ----------------------- HEADER ----------------------- */
@@ -319,21 +318,21 @@ a {
 /* ----------------------- CURSOR ----------------------- */
 
 .custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: white;
 
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease, background-color 0.2s ease;
-}
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    }
 
 .cursor-invert {
-  background-color: black;
+    background-color: black;
 }
