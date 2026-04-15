@@ -57,6 +57,79 @@ a {
     transition: transform 0.8s ease;
 }
 
+@media (max-width: 1900px) { /* ultra wide */
+    .card-2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1797px) { /* ultra wide */
+    .card-1,
+    .card-2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1734px) { /* ultra wide */
+    .card-1,
+    .card-2,
+    .card-3 {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .btn2 {
+        margin-left: 15pvw; /* 🔒 fix */
+    }
+
+    .line-right {
+        left: 600px;  /* 🔒 fix */
+        right: 2rem;
+    }
+}
+
+@media (max-width: 1400px) { /* Small desktop / Laptop */
+    .layout-wrapper {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 1200px) { /* Tablet / small laptop */
+    .layout-wrapper {
+        transform: scale(0.8);
+    }
+    .card-1,
+    .card-2,
+    .card-3 {
+        display: none;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) { /* Tablet */
+    .layout-wrapper {
+        transform: scale(0.7);
+    }
+    .card-1,
+    .card-2,
+    .card-3 {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) { /* Handy */
+    .layout-wrapper {
+        transform: scale(0.7);
+    }
+    .card-1,
+    .card-2,
+    .card-3,
+    .line {
+        display: none;
+    }
+}
+
 /* ----------------------- BUTTONS ----------------------- */
 
 .btn {
@@ -138,6 +211,26 @@ a {
 
 /* ----------------------- CARD ----------------------- */
 
+.main-card {
+    position: relative;
+
+    width: 90%;
+    max-width: 1700px;
+    height: 900px;          
+    margin: 8rem auto;
+    padding: 1rem 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+
+    border: 3px solid var(--white);
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px var(--white);
+    
+    background: transparent;
+    z-index: 1;
+}
+
 .card-1 {
     position: absolute;
     background: var(--black);
@@ -146,11 +239,13 @@ a {
     border-radius: 12px;
     box-shadow: 5px 5px 5px var(--white);
 
-    height: 200px;
-    width: 400px;
+    height: 230px;
+    width: 425px;
 
-    top: 2rem;
-    left: 60rem;
+    top: -5rem;
+    left: 67rem;
+
+    z-index: 2;
 }
 
 .card-1:hover {
@@ -170,8 +265,10 @@ a {
     height: 80px;
     width: 500px;
 
-    top: 40rem;
-    left: 72.5rem;
+    top: 33rem;
+    left: 81rem;
+
+    z-index: 2;
 }
 
 .card-2:hover {
@@ -191,31 +288,16 @@ a {
     height: 350px;
     width: 300px;
 
-    top: 55rem;
-    left: 48rem;
+    top: 46rem;
+    left: 53rem;
+
+    z-index: 2;
 }
 
 .card-3:hover {
     transform: translateY(-5px) scale(1.03) rotate(1deg);
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: yellow;
-}
-
-.main-card {
-    width: 90%;
-    height: 900px;          
-    margin: 8rem auto;
-    padding: 1rem 1.5rem;
-    
-    display: flex;
-    flex-direction: column;
-
-    border: 3px solid var(--white);
-    border-radius: 12px;
-    box-shadow: 5px 5px 5px var(--white);
-    
-    background: transparent;
-    z-index: 1;
 }
 
 /* ----------------------- HEADER ----------------------- */
@@ -276,8 +358,8 @@ a {
 }
 
 .btn2 {
-    margin-left: auto;
-    margin-right: 30rem;
+    display: flex;
+    margin-left: 210px;
 }
 
 .btn3 {
@@ -285,14 +367,28 @@ a {
     margin-left: 30rem;
 }
 
-.line {
+.line-top {
     position: absolute;
-    border-top: 2px dotted var(--white);
+    top: 0;
+    left: 557px;
+    height: 145px; /* vertikal */
+    border-left: 2px dotted var(--white);
 }
 
-.line-vertical {
+.line-bottom {
     position: absolute;
+    top: 685px;
+    left: 557px;
+    height: 252px; /* vertikal */
     border-left: 2px dotted var(--white);
+}
+
+.line-right {
+    position: absolute;
+    top: 414px;
+    left: 1083px;
+    right: 0;
+    border-top: 2px dotted var(--white); /* horizontal */
 }
 
 /* ----------------------- FOOTER ----------------------- */
