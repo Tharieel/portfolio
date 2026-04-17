@@ -59,32 +59,19 @@ a {
 
 /* ----------------------- RESPONSIVE MEDIA ----------------------- */
 
-@media (max-width: 1200px) {
-    .card-1 {
-        transform: translateX(150px);
+@media (max-width: 1940px) {
+    .card {
+        transform: translateX(-60px);
     }
+}
 
-    .card-2 {
-        transform: translateX(250px);
-    }
-
-    .card-3 {
-        transform: translateX(50px);
+@media (max-width: 1300px) {
+    .card {
+        transform: translateX(-60px);
     }
 }
 
 @media (max-width: 768px) {
-    .card {
-        display: none;
-    }
-
-    .btn-row {
-        justify-content: center;
-    }
-
-    .hero {
-        text-align: center;
-    }
 }
 
 /* ----------------------- BUTTONS ----------------------- */
@@ -210,7 +197,7 @@ a {
 
 .card {
     position: absolute;
-    left: 45%;
+    right: 40%;
 
     background: var(--black);
     border: 3px solid var(--white);
@@ -219,11 +206,11 @@ a {
 }
 
 .card-1 {
-    top: -5rem;
-    width: 425px;
-    height: 230px;
+    top: -8%;              /* -5rem ≈ -50px von 900px */
+    right: 15%;              /* anpassen je nach Design */
 
-    transform: translateX(300px);
+    width: 25%;              /* 425 / 1700 */
+    aspect-ratio: 425 / 230; /* behält Verhältnis */
 }
 
 .card-1:hover {
@@ -232,11 +219,11 @@ a {
 }
 
 .card-2 {
-    top: 33rem;
-    width: 500px;
-    height: 80px;
+    top: 58%;                /* 33rem ≈ 528px von 900px */
+    right: -5%;
 
-    transform: translateX(500px);
+    width: 29.5%;            /* 500 / 1700 */
+    aspect-ratio: 500 / 80;            /* 80 / 900 */
 }
 
 .card-2:hover {
@@ -245,11 +232,11 @@ a {
 }
 
 .card-3 {
-    top: 46rem;
-    width: 300px;
-    height: 350px;
+    top: 82%;                /* 46rem ≈ 736px von 900px */
+    right: 30%;
 
-    transform: translateX(150px);
+    width: 17.6%;            /* 300 / 1700 */
+    aspect-ratio: 300 / 350;
 }
 
 .card-3:hover {
