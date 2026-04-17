@@ -59,118 +59,38 @@ a {
 
 /* ----------------------- RESPONSIVE MEDIA ----------------------- */
 
-@media (max-width: 1485px) {
-    .main-section {
-        gap: 2rem !important;
+@media (max-width: 1200px) {
+    .card-1 {
+        transform: translateX(150px);
     }
-    .btn-row {
-        display: flex !important;
-        gap: 1rem;
+
+    .card-2 {
+        transform: translateX(250px);
     }
-    .btn1,
-    .btn2,
-    .btn3 {
-        display: none !important;
+
+    .card-3 {
+        transform: translateX(50px);
     }
-    .line-top,
-    .line-right,
-    .line-bottom {
+}
+
+@media (max-width: 768px) {
+    .card {
         display: none;
     }
-    .card-3 {
-        right: 40% !important;
-    }
-}
 
-@media (max-width: 1150px) {
-    .card-1 {
-        right: 20% !important;
+    .btn-row {
+        justify-content: center;
     }
-    .card-2 {
-        top: 37rem !important;
-    }
-    .card-3 {
-        right: 43% !important;
-    }
-}
 
-@media (max-width: 1100px) {
-    .card-1 {
-        height: 150px !important;
-        width: 350px !important;
-
-        top: 4rem !important;
-        right: 22% !important;
-    }
-    .card-2 {
-        right: 4% !important;
-    }
-    .card-3 {
-        height: 300px !important;
-        width: 300px !important;
-
-        top: 35rem !important;
-        z-index: 1 !important;
-    }
-}
-
-@media (max-width: 830px) {
-    .main-section {
+    .hero {
         text-align: center;
-        align-items: center;
-    }
-    .hero-text-btn2 {
-        font-size: 2.5rem !important;
-    }
-    .card-1 {
-        right: 26% !important;
-    }
-    .card-2 {
-        top: 34rem !important;
-    }
-    .card-3 {
-        top: 33rem !important;
-    }
-    .footer {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    .email-impressum {
-        margin-left: 0 !important;
     }
 }
-
-@media (max-width: 700px) {
-    .hero-text-btn2 {
-        font-size: 2rem !important;
-    }
-    .card-1 {
-        right: 23% !important;
-    }
-}
-
-@media (max-width: 600px) {
-    .card-1 {
-        right: 13% !important;
-    }
-    .card-2 {
-        width: 300px !important;
-    }
-    .card-3 {
-        width: 250px !important;
-    }
-}
-
-@media (max-width: 510px) {
-    .hero-text-btn2 {
-        font-size: 1.8rem !important;
-    }
-}
-
 
 /* ----------------------- BUTTONS ----------------------- */
 
 .btn {
+    position: relative;
     font-family: var(--font-family);
     min-width: 110px;
     height: 45px;
@@ -252,8 +172,8 @@ a {
 .main-card {
     position: relative;
 
-    width: 90%;
-    max-width: 1700px;
+    width: min(90%, 1700px);
+    aspect-ratio: 16 / 9;
     height: 900px;          
     margin: 8rem auto;
     padding: 1rem 1.5rem;
@@ -267,73 +187,72 @@ a {
     
     background: transparent;
     z-index: 1;
+
+    overflow: visible;
 }
 
-.card-1 {
-    position: absolute;
-    background: var(--black);
+.layer {
+    inset: 0;
+}
 
-    border: 3px solid var(--white);
-    border-radius: 12px;
-    box-shadow: 5px 5px 5px var(--white);
-
-    height: 230px;
-    width: 425px;
-
-    top: -5rem;
-    right: 15%;
-
+.layer-cards {
     z-index: 2;
 }
 
+.layer-content {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card {
+    position: absolute;
+    left: 45%;
+
+    background: var(--black);
+    border: 3px solid var(--white);
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px var(--white);
+}
+
+.card-1 {
+    top: -5rem;
+    width: 425px;
+    height: 230px;
+
+    transform: translateX(300px);
+}
+
 .card-1:hover {
-    transform: translateY(-5px) scale(1.03) rotate(-1deg);
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: royalblue;
 }
 
 .card-2 {
-    position: absolute;
-    background: var(--black);
-
-    border: 3px solid var(--white);
-    border-radius: 12px;
-    box-shadow: 5px 5px 5px var(--white);
-
-    height: 80px;
-    width: 500px;
-
     top: 33rem;
-    right: -4%;
+    width: 500px;
+    height: 80px;
 
-    z-index: 2;
+    transform: translateX(500px);
 }
 
 .card-2:hover {
-    transform: translateY(-5px) scale(1.03) rotate(0deg);
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: green;
 }
 
 .card-3 {
-    position: absolute;
-    background: var(--black);
-
-    border: 3px solid var(--white);
-    border-radius: 12px;
-    box-shadow: 5px 5px 5px var(--white);
-
-    height: 350px;
-    width: 300px;
-
     top: 46rem;
-    right: 31%;
+    width: 300px;
+    height: 350px;
 
-    z-index: 2;
+    transform: translateX(150px);
 }
 
 .card-3:hover {
-    transform: translateY(-5px) scale(1.03) rotate(1deg);
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: yellow;
 }
@@ -377,62 +296,73 @@ a {
 .main-section{
     display: flex;
     flex-direction: column;
-    margin: auto 0;
-    gap: 7rem;
+    margin: 17% 0;
 }
 
-.btn1 {
+.hero {
     display: flex;
-    margin-left: 30rem;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.hero-text-btn2 {
+.hero h1 {
+    color: var(--white);
+    font-size: 6rem;
+}
+
+.btn-item {
+    position: absolute;
+}
+
+.btn-1 { top: 17%; left: 30%; }
+.btn-2 { top: 41%; left: 60%; }
+.btn-3 { top: 70%; left: 30%; }
+
+.btn-1::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: -378%;
+
+    height: 170px;
+
+    border-left: 2px dotted var(--white);
+
+    transform: translateX(-50%);
+}
+
+.btn-line { /* btn-2 */
+    position: absolute;
+    top: 41%;
+    left: 60%;
+
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    margin: auto 0;
-    color: var(--white);
-    font-size: 3rem;
+
+    width: calc(100% - 58.5%); /* startet bei left 60% */
 }
 
-.btn2 {
-    display: flex;
-    margin-left: 210px;
+.line { /* btn-2 */
+    flex: 1; /* damit dockt die Linie an die main-card */
+    border-top: 2px dotted white;
+    margin-left: 0px;
 }
 
-.btn3 {
-    display: flex;
-    margin-left: 30rem;
-}
-
-.line-top {
+.btn-3::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 558.5px;
-    height: 145px; /* vertikal */
+
+    left: 50%;
+    top: 100%;
+
+    height: clamp(10px, 100vw, 240px);
+
     border-left: 2px dotted var(--white);
+
+    transform: translateX(-50%);
 }
 
-.line-bottom {
-    position: absolute;
-    top: 685px;
-    left: 558.5px;
-    height: 252px; /* vertikal */
-    border-left: 2px dotted var(--white);
-}
-
-.line-right {
-    position: absolute;
-    top: 414px;
-    left: 1083px;
-    right: 0;
-    border-top: 2px dotted var(--white); /* horizontal */
-}
-
-.btn-row {
-    color: var(--white);
-    display: none;
-}
 
 /* ----------------------- FOOTER ----------------------- */
 
