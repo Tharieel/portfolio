@@ -108,16 +108,18 @@
     top: 58rem;
     left: 25rem;
 
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: auto;
+
+    z-index: 5;
 }
 
 .card-code-python pre {
     height: 100%;
     margin: 0;
     padding: 1rem;
-
-    overflow: auto; /* 👈 DAS macht den Scroll */
     color: white;
+    cursor: none;
 }
 
 .card-code-python:hover {
