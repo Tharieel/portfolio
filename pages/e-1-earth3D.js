@@ -1,17 +1,12 @@
-// =====================
+// 3D-EARTH
 // SCENE
-// =====================
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
-// =====================
 // CONTAINER
-// =====================
 const container = document.getElementById("globe-container");
 
-// =====================
 // CAMERA
-// =====================
 const camera = new THREE.PerspectiveCamera(
     50,
     container.clientWidth / container.clientHeight,
@@ -21,9 +16,7 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 5;
 camera.lookAt(0, 0, 0);
 
-// =====================
 // RENDERER
-// =====================
 const renderer = new THREE.WebGLRenderer({
     antialias: false,
     powerPreference: "high-performance"
@@ -32,9 +25,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(1);
 container.appendChild(renderer.domElement);
 
-// =====================
 // RESIZE
-// =====================
 function setSize() {
     const width = container.clientWidth;
     const height = container.clientHeight;
@@ -53,9 +44,7 @@ window.addEventListener("resize", () => {
     resizeTimeout = setTimeout(setSize, 150);
 });
 
-// =====================
 // WIREFRAME GLOBE
-// =====================
 const globe = new THREE.Mesh(
     new THREE.SphereGeometry(1.8, 14, 14),
     new THREE.MeshBasicMaterial({
@@ -68,14 +57,10 @@ const globe = new THREE.Mesh(
 
 scene.add(globe);
 
-// =====================
 // LABEL (DOM)
-// =====================
 const labelDiv = document.getElementById("label");
 
-// =====================
 // MARKERS
-// =====================
 function createMarker(lat, lon, label, target) {
 
     const phi = (90 - lat) * Math.PI / 180;
@@ -104,9 +89,7 @@ function createMarker(lat, lon, label, target) {
     return marker;
 }
 
-// =====================
 // MARKER LIST
-// =====================
 const markers = [
     createMarker(60, -20, "Home", "#home"),
     createMarker(20, 90, "Kontakt", "#kontakt"),
@@ -114,18 +97,15 @@ const markers = [
     createMarker(-50, -60, "Blog", "#blog")
 ];
 
-// =====================
+
 // RAYCASTER
-// =====================
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
 let hovered = null;
 let lastRayTime = 0;
 
-// =====================
 // MOUSE MOVE
-// =====================
 container.addEventListener("mousemove", (event) => {
 
     const rect = container.getBoundingClientRect();
@@ -134,9 +114,7 @@ container.addEventListener("mousemove", (event) => {
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 });
 
-// =====================
 // ANIMATION LOOP
-// =====================
 function animate(time) {
     requestAnimationFrame(animate);
 
@@ -158,9 +136,7 @@ function animate(time) {
         }
 }
 
-// =====================
-// ⭐ LABEL POSITION FIX (HIER EINBAUEN!)
-// =====================
+// LABEL POSITION
 if (hovered) {
 
     const pos = new THREE.Vector3();
