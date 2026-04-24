@@ -257,14 +257,22 @@ a {
     border: 3px solid var(--white);
     border-radius: 12px;
     box-shadow: 5px 5px 5px var(--white);
+
+    z-index: 5;
 }
 
 .card-1 {
-    top: -8%;              /* -5rem ≈ -50px von 900px */
-    right: 15%;              /* anpassen je nach Design */
+    position: absolute;
+    left: 50vw;
+    top: -8vh;           
 
-    width: 25%;              /* 425 / 1700 */
-    aspect-ratio: 425 / 230; /* behält Verhältnis */
+    width: 25%;              
+    aspect-ratio: 425 / 230;
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-1:hover {
@@ -272,12 +280,39 @@ a {
     border-color: royalblue;
 }
 
+.card-1:active {
+    cursor: grabbing;
+}
+
+.card-1-text {
+    position: absolute;
+
+    top: 5%;
+    right: 6%;
+
+    width: 30%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
+}
+
 .card-2 {
-    top: 58%;                /* 33rem ≈ 528px von 900px */
+    top: 58%;               
     right: -5%;
 
-    width: 29.5%;            /* 500 / 1700 */
-    aspect-ratio: 500 / 80;            /* 80 / 900 */
+    width: 29.5%;            
+    aspect-ratio: 500 / 80;          
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-2:hover {
@@ -285,17 +320,66 @@ a {
     border-color: green;
 }
 
+.card-2:active {
+    cursor: grabbing;
+}
+
+.card-2-text {
+    position: absolute;
+
+    top: 54%;   /* unter card-2 */
+    right: 2%; /* anpassen */
+
+    width: 30%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
+}
+
 .card-3 {
-    top: 82%;                /* 46rem ≈ 736px von 900px */
+    top: 82%;            
     right: 30%;
 
-    width: 17.6%;            /* 300 / 1700 */
+    width: 17.6%;           
     aspect-ratio: 300 / 350;
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-3:hover {
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: yellow;
+}
+
+.card-3:active {
+    cursor: grabbing;
+}
+
+.card-3-text {
+    position: absolute;
+
+    top: 75%;   
+    right: 30%;
+
+    width: 28%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
 }
 
 /* ----------------------- HEADER ----------------------- */
@@ -343,13 +427,18 @@ a {
 .hero {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     margin: 15% 0;
 }
 
 .hero h1 {
     color: var(--white);
     font-size: clamp(3.5rem, 6vw, 6.5rem);
+}
+
+.hero p {
+    color: var(--white);
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .btn-item {
@@ -442,6 +531,10 @@ a {
     pointer-events: none;
     z-index: 9999;
     transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.custom-cursor.hide {
+    opacity: 0;
 }
 
 .cursor-invert {

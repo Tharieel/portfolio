@@ -60,9 +60,9 @@ html, body {
 .btn-projects-topics {
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 7rem;
     font-size: 4rem;
-    margin: auto 0;
+    margin: 6rem 0;
 }
 
 .btn-webdev {
