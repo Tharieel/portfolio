@@ -8,6 +8,12 @@ html, body {
     height: 100%;
 }
 
+a:hover { 
+    transform: scale(1.05, 1.05);
+    box-shadow: 0px 3px 6px var(--grey-base);
+    cursor: none;
+}
+
 #label {
     position: absolute;
     color: white;
@@ -33,6 +39,127 @@ html, body {
 #globe-container {
     width: 600px;
     height: 600px;
+}
+
+.card-1-p {
+    position: absolute;
+    left: 50vw;
+    top: -8vh;           
+
+    width: 25%;              
+    aspect-ratio: 425 / 230;
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.card-1-p:hover {
+    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
+    border-color: royalblue;
+}
+
+.card-1-p:active {
+    cursor: grabbing;
+}
+
+.card-1-text-p {
+    position: absolute;
+
+    top: 5%;
+    right: 6%;
+
+    width: 30%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.card-2-p {
+    top: 75%;               
+    right: -5%;
+
+    width: 29.5%;            
+    aspect-ratio: 500 / 80;          
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.card-2-p:hover {
+    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
+    border-color: green;
+}
+
+.card-2-p:active {
+    cursor: grabbing;
+}
+
+.card-2-text-p {
+    position: absolute;
+
+    top: 71%;
+    right: 2%;
+
+    width: 30%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.card-3-p {
+    top: 82%;            
+    right: 50%;
+
+    width: 17.6%;           
+    aspect-ratio: 300 / 350;
+
+    cursor: grab;
+    user-select: none;
+
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.card-3-p:hover {
+    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
+    border-color: yellow;
+}
+
+.card-3-p:active {
+    cursor: grabbing;
+}
+
+.card-3-text-p {
+    position: absolute;
+
+    top: 75%;   
+    right: 50%;
+
+    width: 28%;
+    aspect-ratio: 400 / 150;
+
+    padding: 1rem;
+
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.5;
+    z-index: 0;
 }
 
 .main-section-pages {
@@ -98,7 +225,6 @@ html, body {
 .nav-pages {
     display: flex;
     flex-direction: column;
-    justify-content: top;
     margin-top: 18rem;
     margin-left: auto;
     gap: 2rem;
@@ -113,21 +239,33 @@ html, body {
 .btn-projects-topics {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 7rem;
-    font-size: 4rem;
-    margin: 6rem 0;
+    font-size: 3.5rem;
+    margin: 9rem 0;
+    margin-left: -1.5rem;
 }
 
-.btn-webdev {
-    margin-left: 10rem;
+.btn-line-p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.btn-datascience {
-    margin-left: 30rem;
+.line-p  {
+    border-top: 2px dotted white;
 }
 
-.btn-other {
-    margin-left: 50rem;
+.btn-webdev .line-p {
+    width: 200px;
+}
+
+.btn-datascience .line-p {
+    width: 600px;
+}
+
+.btn-other .line-p {
+    width: 1000px;
 }
 
 .p-1 {
@@ -223,4 +361,14 @@ html, body {
 .card-code-python:hover {
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: royalblue;
+}
+
+.c-img {
+    width: 100%;
+    max-width: 1000px;
+    height: 50rem;
+    /* object-fit: contain; */
+    opacity: 0.2;
+
+    z-index: 0;
 }
