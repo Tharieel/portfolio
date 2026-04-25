@@ -4,7 +4,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 // Empfänger (DEINE Mail!)
-$to = "deine-email@example.com";
+$to = "business@katharinakay.com";
 
 // Betreff
 $subject = "Neue Kontaktanfrage";

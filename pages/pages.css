@@ -46,7 +46,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    margin-top: 15rem;
+    margin-top: 18rem;
     margin-left: auto;
     gap: 2rem;
 }

@@ -433,7 +433,9 @@ a {
 
 .hero h1 {
     color: var(--white);
-    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    font-size: clamp(3.5rem, 6vw, 10rem);
+    line-height: 100px;
+    letter-spacing: -7px;
 }
 
 .hero p {
@@ -530,13 +532,8 @@ a {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 .custom-cursor.hide {
     opacity: 0;
-}
-
-.cursor-invert {
-    background-color: black;
 }

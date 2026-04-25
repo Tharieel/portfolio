@@ -112,3 +112,17 @@
     scrollbar-width: thin;
     scrollbar-color: rgba(0,0,0,0.3) rgba(0,0,0,0.05);
 }
+
+.contact-text {
+    display: flex;
+    font-family: var(--font-family);
+    color: var(--white);
+    padding: 2rem;
+    margin: 10.4rem 0;
+    line-height: 30px;
+}
+
+.construction-png {
+    width: 22px;
+    vertical-align: middle;
+}
