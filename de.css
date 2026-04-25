@@ -265,10 +265,11 @@ a {
 
 .card-1 {
     position: absolute;
-    left: 50vw;
-    top: -8vh;           
 
-    width: 25%;              
+    top: -8%;
+    left: 53%;
+
+    width: 25%;
     aspect-ratio: 425 / 230;
 
     cursor: grab;
@@ -351,8 +352,8 @@ a {
 .card-2-text {
     position: absolute;
 
-    top: 54%;   /* unter card-2 */
-    right: 2%; /* anpassen */
+    top: 54%;
+    right: 2%;
 
     width: 30%;
     aspect-ratio: 400 / 150;
@@ -459,14 +460,14 @@ a {
 
 .hero h1 {
     color: var(--white);
-    font-size: clamp(3.5rem, 6vw, 10rem);
-    line-height: 100px;
-    letter-spacing: -7px;
+    font-size: clamp(3.5rem, 5vw, 8rem);
+    line-height: 0.8;
+    letter-spacing: -5px;
 }
 
 .hero p {
     color: var(--white);
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 1vw, 1.2rem);
 }
 
 .btn-item {

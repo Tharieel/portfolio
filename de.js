@@ -1,4 +1,3 @@
-
 // =========================
 // CURSOR SYSTEM
 // =========================
@@ -30,7 +29,7 @@ document.addEventListener('mousemove', e => {
 
 
 // =========================
-// DRAG SYSTEM (MULTI CARD FIXED)
+// DRAG + RESET SYSTEM (FIXED)
 // =========================
 
 const cards = document.querySelectorAll('.card');
@@ -40,8 +39,24 @@ let activeCard = null;
 let offsetX = 0;
 let offsetY = 0;
 
-// Cursor hide on hover (für alle cards)
+
+// =========================
+// 1. START POSITION SPEICHERN (BEIM LOAD)
+// =========================
 cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    const parentRect = card.offsetParent.getBoundingClientRect();
+
+    card.dataset.startX = rect.left - parentRect.left;
+    card.dataset.startY = rect.top - parentRect.top;
+});
+
+
+// =========================
+// 2. CURSOR HIDE + DRAG START
+// =========================
+cards.forEach(card => {
+
     card.addEventListener('mouseenter', () => {
         cursor.classList.add('hide');
     });
@@ -50,35 +65,29 @@ cards.forEach(card => {
         cursor.classList.remove('hide');
     });
 
-    // START DRAG
     card.addEventListener('mousedown', (e) => {
         isDragging = true;
         activeCard = card;
 
-        const parent = card.offsetParent;
-        const parentRect = parent.getBoundingClientRect();
-        const cardRect = card.getBoundingClientRect();
+        const rect = card.getBoundingClientRect();
 
-        offsetX = e.clientX - cardRect.left;
-        offsetY = e.clientY - cardRect.top;
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
 
         card.style.cursor = 'grabbing';
 
-        // Startposition nur einmal speichern
-        if (!card.dataset.startLeft) {
-            card.dataset.startLeft = card.offsetLeft;
-            card.dataset.startTop = card.offsetTop;
-        }
+        card.style.position = 'absolute';
     });
 });
 
 
-// MOVE
+// =========================
+// 3. MOVE
+// =========================
 document.addEventListener('mousemove', (e) => {
     if (!isDragging || !activeCard) return;
 
-    const parent = activeCard.offsetParent;
-    const parentRect = parent.getBoundingClientRect();
+    const parentRect = activeCard.offsetParent.getBoundingClientRect();
 
     const x = e.clientX - parentRect.left - offsetX;
     const y = e.clientY - parentRect.top - offsetY;
@@ -88,7 +97,9 @@ document.addEventListener('mousemove', (e) => {
 });
 
 
-// END DRAG
+// =========================
+// 4. DRAG END
+// =========================
 document.addEventListener('mouseup', () => {
     if (activeCard) {
         activeCard.style.cursor = 'grab';
@@ -100,21 +111,19 @@ document.addEventListener('mouseup', () => {
 
 
 // =========================
-// RESET SYSTEM (ALL CARDS)
+// 5. RESET (DOUBLE CLICK)
 // =========================
-
 function resetCard(card) {
     card.style.transition = "all 0.6s cubic-bezier(.2,.8,.2,1)";
 
-    card.style.left = card.dataset.startLeft + 'px';
-    card.style.top = card.dataset.startTop + 'px';
+    card.style.left = card.dataset.startX + 'px';
+    card.style.top = card.dataset.startY + 'px';
 
     setTimeout(() => {
         card.style.transition = "none";
     }, 600);
 }
 
-// double click reset für alle cards
 cards.forEach(card => {
     card.addEventListener('dblclick', () => {
         resetCard(card);
