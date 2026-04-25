@@ -259,6 +259,8 @@ a {
     box-shadow: 5px 5px 5px var(--white);
 
     z-index: 5;
+
+    overflow: hidden;
 }
 
 .card-1 {
@@ -300,6 +302,28 @@ a {
     line-height: 1.4;
     opacity: 0.5;
     z-index: 0;
+}
+
+.card-hinweis {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+
+    font-size: 0.65rem;
+    color: white;
+    font-family: monospace;
+
+    opacity: 0;
+    transform: translateY(5px);
+
+    transition: 0.2s ease;
+    pointer-events: none;
+}
+
+/* 👇 nur beim Hover der jeweiligen Card sichtbar */
+.card:hover .card-hinweis {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card-2 {
@@ -381,6 +405,8 @@ a {
     opacity: 0.5;
     z-index: 0;
 }
+
+
 
 /* ----------------------- HEADER ----------------------- */
 
@@ -531,7 +557,7 @@ a {
 
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 999999;
 }
 
 .custom-cursor.hide {

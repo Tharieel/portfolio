@@ -1,6 +1,7 @@
 .contact-form {
     display: flex;
     justify-content: center;
+    margin-top: -10rem;
 }
 
 .login-form {
@@ -118,7 +119,7 @@
     font-family: var(--font-family);
     color: var(--white);
     padding: 2rem;
-    margin: 10.4rem 0;
+    margin: 15.5rem 0;
     line-height: 30px;
 }
 
