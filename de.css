@@ -29,17 +29,20 @@
     
     /* MISCELLANEOUS */
     --nav-height: 10rem; /* Update the value in the flexbox topic */
+    
+    --space: 0.5rem;
 }
 
 * {
     cursor: none;
+    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     background-color: var(--black);
     font-family: var(--font-family);
     cursor: none;
-    margin-bottom: 10rem;
 }
 
 h1, h2, h3, p, ul, li {
@@ -121,10 +124,43 @@ a {
     }
     .footer {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.3rem;
     }
     .email-impressum {
         margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .card-1-text {
+        opacity: 0.2 !important;
+    }
+    .card-2-text {
+        top: 50% !important;
+    }
+    .card-3-text {
+        top: 60% !important;
+    }
+    .hero {
+        gap: 1rem !important;
+    }
+    .hero h1 {
+        font-size: 3rem !important;
+        line-height: 1 !important;
+        letter-spacing: -2px !important;
+    }
+    .btn-item {
+        margin: 2rem 0 0 0 !important;
+    }
+    .btn-1 {
+        left: 1% !important;
+    }
+    .btn-2 {
+        left: 34.6% !important;
+    }
+    .header,
+    .footer {
+        font-size: 0.9rem;
     }
 }
 
@@ -213,14 +249,11 @@ a {
 .main-card {
     position: relative;
 
-    width: min(90%, 1700px);
+    width: min(95%, 1200px);
     aspect-ratio: 16 / 9;
-    height: 900px;          
+    min-height: 900px;          
     margin: 8rem auto;
-    padding: 1rem 1.5rem;
-    
-    display: flex;
-    flex-direction: column;
+    padding: 1rem;
 
     border: 3px solid var(--white);
     border-radius: 12px;
@@ -261,6 +294,14 @@ a {
     z-index: 5;
 
     overflow: hidden;
+    user-select: none;
+
+    cursor: grab;
+    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.card::active {
+    cursor: grabbing;
 }
 
 .card-1 {
@@ -271,20 +312,11 @@ a {
 
     width: 25%;
     aspect-ratio: 425 / 230;
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-1:hover {
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: royalblue;
-}
-
-.card-1:active {
-    cursor: grabbing;
 }
 
 .card-1-text {
@@ -293,7 +325,7 @@ a {
     top: 5%;
     right: 6%;
 
-    width: 30%;
+    /* width: 30%; */
     aspect-ratio: 400 / 150;
 
     padding: 1rem;
@@ -321,7 +353,6 @@ a {
     pointer-events: none;
 }
 
-/* 👇 nur beim Hover der jeweiligen Card sichtbar */
 .card:hover .card-hinweis {
     opacity: 1;
     transform: translateY(0);
@@ -333,20 +364,11 @@ a {
 
     width: 29.5%;            
     aspect-ratio: 500 / 80;          
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-2:hover {
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: green;
-}
-
-.card-2:active {
-    cursor: grabbing;
 }
 
 .card-2-text {
@@ -355,7 +377,6 @@ a {
     top: 54%;
     right: 2%;
 
-    width: 30%;
     aspect-ratio: 400 / 150;
 
     padding: 1rem;
@@ -373,20 +394,11 @@ a {
 
     width: 17.6%;           
     aspect-ratio: 300 / 350;
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
 .card-3:hover {
     box-shadow: 0 15px 20px rgba(255,255,255,0.5);
     border-color: yellow;
-}
-
-.card-3:active {
-    cursor: grabbing;
 }
 
 .card-3-text {
@@ -395,7 +407,6 @@ a {
     top: 75%;   
     right: 30%;
 
-    width: 28%;
     aspect-ratio: 400 / 150;
 
     padding: 1rem;
@@ -406,8 +417,6 @@ a {
     opacity: 0.5;
     z-index: 0;
 }
-
-
 
 /* ----------------------- HEADER ----------------------- */
 
@@ -493,7 +502,6 @@ a {
 }
 
 .btn-line { /* btn-2 */
-    position: absolute;
     top: 41%;
     right: 0;
 
