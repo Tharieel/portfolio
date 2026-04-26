@@ -1,3 +1,78 @@
+/* =========================
+    MEDIA QUERY (HANDY) 412x915
+========================= */
+
+@media (max-width: 430px) { /* 412x915 */
+    /* =========================
+        PARENT LAYOUT FIX (WICHTIG)
+    ========================= */
+
+    .main-section-pages {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    /* NAVIGATION oben in Card */
+    .nav-pages {
+        flex-direction: row !important;
+        gap: 1rem !important;
+
+        margin: 1rem 0 0 0 !important;
+        width: 100%;
+
+        order: 2;
+    }
+    
+    .nav-pages p {
+        display: none;
+    }
+
+    /* Cards ausblenden */
+    .card-1,
+    .card-2,
+    .card-3,
+    .layer-cards,
+    .card-1-text,
+    .card-2-text,
+    .card-3-text {
+        display: none;
+    }
+
+    /* Linien ausblenden */
+    .btn-line-p,
+    .line-p {
+        display: none;
+    }
+
+    .btn-projects-topics {
+        align-items: center !important;
+        gap: 3rem !important;
+        font-size: 2.3rem !important;
+        margin: 10rem 0 !important;
+
+        order: 1;
+    }
+
+    .c-img {
+        display: none;
+    }
+
+    .p-cards-container {
+        grid-template-columns: 1fr !important;
+        row-gap: 2rem;
+    }
+
+    .p-card {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ----------------------------------------------- */
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -58,16 +133,22 @@ a:hover {
     right: 40%;
 }
 
+.p-webdev-card-3 {
+    display: none;
+}
+
+.p-webdev-card-text-3 {
+    display: none;
+}
+
 .main-section-pages {
     display: flex;
     width: 100%;
-    height: 100%;
-    /* min-height: 100vh; WICHTIG */
 }
 
 .p-cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 220px);
+    grid-template-columns: repeat(2, 220px);
 
     column-gap: 7rem;
     row-gap: 2rem;
@@ -121,7 +202,7 @@ a:hover {
 .nav-pages {
     display: flex;
     flex-direction: column;
-    margin-top: 18rem;
+    margin-top: 16.5rem;
     margin-left: auto;
     gap: 2rem;
 }
@@ -265,6 +346,5 @@ a:hover {
     height: 50rem;
     /* object-fit: contain; */
     opacity: 0.2;
-
     z-index: 0;
 }

@@ -165,22 +165,6 @@ a {
     .footer {
         font-size: 0.9rem;
     }
-    .card-1-p,
-    .card-2-p,
-    .card-3-p  {
-        display: none;
-    }
-    .card-2-text-p {
-        top: 65% !important;
-    }
-    .card-3-text-p {
-        top: 76% !important;
-    }
-    .login-form {
-        width: 45% !important;
-    }
-    /* .login-register-form-buttons {
-    } */
 }
 
 /* ----------------------- BUTTONS ----------------------- */
@@ -451,7 +435,7 @@ a {
 
 .header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: var(--white);
     font-family: var(--font-family);
 }
