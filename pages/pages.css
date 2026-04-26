@@ -41,125 +41,21 @@ a:hover {
     height: 600px;
 }
 
-.card-1-p {
-    position: absolute;
-    left: 50vw;
-    top: -8vh;           
-
-    width: 25%;              
-    aspect-ratio: 425 / 230;
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
+.pages-card-2 {
+    top: 70%;
 }
 
-.card-1-p:hover {
-    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
-    border-color: royalblue;
+.pages-card-text-2 {
+    top: 65%;
 }
 
-.card-1-p:active {
-    cursor: grabbing;
+.pages-card-3 {
+    right: 40%;
 }
 
-.card-1-text-p {
-    position: absolute;
-
-    top: 5%;
-    right: 6%;
-
-    width: 30%;
-    aspect-ratio: 400 / 150;
-
-    padding: 1rem;
-
-    color: white;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.card-2-p {
-    top: 75%;               
-    right: -5%;
-
-    width: 29.5%;            
-    aspect-ratio: 500 / 80;          
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
-}
-
-.card-2-p:hover {
-    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
-    border-color: green;
-}
-
-.card-2-p:active {
-    cursor: grabbing;
-}
-
-.card-2-text-p {
-    position: absolute;
-
-    top: 71%;
-    right: 2%;
-
-    width: 30%;
-    aspect-ratio: 400 / 150;
-
-    padding: 1rem;
-
-    color: white;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    opacity: 0.5;
-    z-index: 0;
-}
-
-.card-3-p {
-    top: 82%;            
-    right: 50%;
-
-    width: 17.6%;           
-    aspect-ratio: 300 / 350;
-
-    cursor: grab;
-    user-select: none;
-
-    transition: all 0.6s cubic-bezier(.2,.8,.2,1);
-}
-
-.card-3-p:hover {
-    box-shadow: 0 15px 20px rgba(255,255,255,0.5);
-    border-color: yellow;
-}
-
-.card-3-p:active {
-    cursor: grabbing;
-}
-
-.card-3-text-p {
-    position: absolute;
-
-    top: 75%;   
-    right: 50%;
-
-    width: 28%;
-    aspect-ratio: 400 / 150;
-
-    padding: 1rem;
-
-    color: white;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    opacity: 0.5;
-    z-index: 0;
+.pages-card-text-3 {
+    top: 78%;   
+    right: 40%;
 }
 
 .main-section-pages {

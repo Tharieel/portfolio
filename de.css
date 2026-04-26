@@ -131,7 +131,10 @@ a {
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 430px) { /* 412x915 */
+    .main-card {
+        margin: 2rem auto !important;
+    }    
     .card-1-text {
         opacity: 0.2 !important;
     }
@@ -156,92 +159,117 @@ a {
         left: 1% !important;
     }
     .btn-2 {
-        left: 34.6% !important;
+        left: 34.55% !important;
     }
     .header,
     .footer {
         font-size: 0.9rem;
     }
+    .card-1-p,
+    .card-2-p,
+    .card-3-p  {
+        display: none;
+    }
+    .card-2-text-p {
+        top: 65% !important;
+    }
+    .card-3-text-p {
+        top: 76% !important;
+    }
+    .login-form {
+        width: 45% !important;
+    }
+    /* .login-register-form-buttons {
+    } */
 }
 
 /* ----------------------- BUTTONS ----------------------- */
 
+/* =========================
+    BASE BUTTON
+========================= */
+
 .btn {
     position: relative;
+
     font-family: var(--font-family);
+    font-size: 1rem;
+
     min-width: 110px;
     height: 45px;
-    font-size: 1rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     border-radius: 10px;
+
     background-color: transparent;
+    border: 2px solid transparent;
+
+    text-decoration: none;
+
     cursor: none;
+
+    transition: all 0.4s ease;
 }
 
-.btn-primary:link, .btn-primary:visited {
+/* =========================
+    PRIMARY BUTTON
+========================= */
+
+.btn-primary {
     color: var(--white);
-    background-color: transparent;
     border: 2px solid var(--white);
-    transition: 0.5s;
-    cursor: none;
 }
 
-.btn-primary:hover, .btn-primary:active {
-    color: var(--white);
-    background-color: transparent;
-    border: 2px solid var(--white);
-    transform: scale(1.05, 1.05);
+.btn-primary:hover,
+.btn-primary:active {
+    transform: scale(1.05);
     box-shadow: 0px 3px 6px var(--grey-base);
-    cursor: none;
 }
 
-.btn-primary-outline:link, .btn-primary-outline:visited {
+/* =========================
+    OUTLINE PRIMARY
+========================= */
+
+.btn-primary-outline {
     color: var(--white);
-    background-color: transparent;
     border: 2px solid var(--white);
-    transition: 0.5s;
-    cursor: none;
 }
 
-.btn-primary-outline:hover, .btn-primary-outline:active {
-    color: var(white);
-    background-color: transparent;
-    border: 2px solid var(white);
-    transform: scale(1.05, 1.05);
+.btn-primary-outline:hover,
+.btn-primary-outline:active {
+    transform: scale(1.05);
     box-shadow: 0px 3px 6px var(--grey-base);
-    cursor: none;
 }
+
+/* =========================
+    SECONDARY BUTTON
+========================= */
 
 .btn-secondary {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;    
-    text-decoration: none;      
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
     background-color: transparent;
     border: 2px dotted var(--white);
-    color: var(--white);        
-    transition: 0.5s;
+    color: var(--white);
+
     cursor: none;
+
+    transition: all 0.4s ease;
 }
 
-.btn-secondary:link, .btn-secondary:visited {
-    background-color: transparent;
-    border: 2px dotted var(white);
-    border-color: white;
-    transition: 0.5s;
-    cursor: none;
-}
-
-.btn-secondary:hover, .btn-secondary:active {
-    background-color: transparent;
-    border: 2px dotted var(white);
-    transform: scale(1.05, 1.05);
+.btn-secondary:hover,
+.btn-secondary:active {
     transform: scale(1.05);
     box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
-    cursor: none;
 }
 
 /* ----------------------- CARD ----------------------- */
@@ -249,7 +277,7 @@ a {
 .main-card {
     position: relative;
 
-    width: min(95%, 1200px);
+    width: min(95%, 1700px);
     aspect-ratio: 16 / 9;
     min-height: 900px;          
     margin: 8rem auto;
@@ -325,7 +353,9 @@ a {
     top: 5%;
     right: 6%;
 
-    /* width: 30%; */
+    left: 56%; /* gibt stabile Breitenbasis */
+    max-width: 40%;
+
     aspect-ratio: 400 / 150;
 
     padding: 1rem;
@@ -334,7 +364,6 @@ a {
     font-size: 0.8rem;
     line-height: 1.4;
     opacity: 0.5;
-    z-index: 0;
 }
 
 .card-hinweis {
@@ -377,7 +406,7 @@ a {
     top: 54%;
     right: 2%;
 
-    aspect-ratio: 400 / 150;
+    max-width: 30%;
 
     padding: 1rem;
 

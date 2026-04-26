@@ -18,13 +18,13 @@
 
         <!-- 2. CARDS (floating UI) -->
         <div class="layer layer-cards">
-            <div class="card card-1">
+            <div class="card card-1 pages-card-1">
                 <div class="card-hinweis">
                     > Du kannst mich bewegen! Doppelklick = Reset <
                 </div>
             </div>
 
-            <p class="card-1-text">
+            <p class="card-1-text pages-card-text-1">
                 Ich bin Webentwicklerin mit Background in quantitativer Biologie, IT-Consulting und Softwareentwicklung.
                 <br>
                 Ich arbeite an der Schnittstelle von Code, Daten und Produkt.
@@ -40,25 +40,25 @@
                 Minimal. Funktional. Datengetrieben.
             </p>
 
-            <div class="card card-2-p">
+            <div class="card card-2 pages-card-2">
                 <div class="card-hinweis">
                     > Du kannst mich bewegen! Doppelklick = Reset <
                 </div>
             </div>
 
-            <p class="card-2-text-p">
+            <p class="card-2-text pages-card-text-2">
                 Das Portfolio entstand von 0 nach vielem Lernen und Versuchen im April 2026.
                 Die Seite ist immer noch im Aufbau. 
                 Neue Projekte sind in Arbeit und kommen bald.
             </p>
 
-            <div class="card card-3-p">
+            <div class="card card-3 pages-card-3">
                 <div class="card-hinweis">
                     > Du kannst mich bewegen! Doppelklick = Reset <
                 </div>
             </div>
 
-            <p class="card-3-text-p">
+            <p class="card-3-text pages-card-text-3">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                 <br>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
                 <br>sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
@@ -88,41 +88,57 @@
         <section class="main-section-pages">
 
             <div class="contact-form">
+
+                <!-- FORM SECTION -->
                 <form action="contact.php" method="post" class="login-form">
-                    <label for="uname"><b class="small-text">Name</b></label>
-                    <input type="text" placeholder="Name einfügen" name="uname" required>
 
-                    <label for="email"><b class="small-text">E-Mail-Adresse</b></label>
-                    <input type="text" placeholder="E-Mail-Adresse einfügen" name="email" required>
+                    <div class="form-fields">
 
-                    <label for="message"><b class="small-text">Nachricht</b></label>
-                    <textarea id="message-entry" name="entry" cols="30" rows="10" placeholder="Nachricht einfügen" required></textarea>
+                        <label>
+                            <span class="small-text">> Name</span>
+                            <input type="text" name="uname" placeholder="Name einfügen" required>
+                        </label>
 
+                        <label>
+                            <span class="small-text">> E-Mail-Adresse</span>
+                            <input type="text" name="email" placeholder="E-Mail-Adresse einfügen" required>
+                        </label>
+
+                        <label>
+                            <span class="small-text">> Nachricht</span>
+                            <textarea name="entry" placeholder="Nachricht einfügen" required></textarea>
+                        </label>
+
+                    </div>
+
+                    <!-- CHECKBOX -->
                     <label class="checkbox-text">
                         <input type="checkbox" name="remember" required>
-                        <span>Ich bin mit der Verarbeitung meiner Eingaben zum Zwecke der Anfragebearbeitung einverstanden</span>
+                        <span>
+                            Ich bin mit der Verarbeitung meiner Eingaben zum Zwecke der Anfragebearbeitung einverstanden
+                        </span>
                     </label>
 
-                    <ul class="login-register-form-buttons">
-                        <li><button type="submit" class="btn btn-primary">Absenden</button></li>
-                        <li><button type="reset" class="btn btn-primary">Zurücksetzen</button></li>
-                        <li><a class="btn btn-secondary" href="../index.html">Abbrechen</a></li>
-                    </ul>
+                    <!-- ACTION BUTTONS -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">> Absenden</button>
+                        <button type="reset" class="btn btn-primary">> Zurücksetzen</button>
+                        <a class="btn btn-secondary" href="../index.html">> Abbrechen</a>
+                    </div>
+
                 </form>
 
-                <div class="contact-text">
-                <p>Nachricht geht an:
-                    <br>
-                    Katharina Kay
-                    <br>
-                    mail:business@katharinakay.com
-                    <br>
-                    <br>
-                    <img class="construction-png" src="../images/construct-outline-weiß.png" alt="construction pic"> #Kalender
-                    <br>
-                    <img class="construction-png" src="../images/construct-outline-weiß.png" alt="construction pic"> #QRCode
-                </p>
-                </div>
+                <!-- INFO SECTION -->
+                <aside class="contact-text">
+                    <p>
+                        Nachricht geht an:<br>
+                        > Katharina Kay<br>
+                        > mail: business@katharinakay.com<br><br>
+
+                        <img class="construction-png" src="../images/construct-outline-weiß.png"> #Kalender<br>
+                        <img class="construction-png" src="../images/construct-outline-weiß.png"> #QRCode
+                    </p>
+                </aside>
 
             </div>
 
