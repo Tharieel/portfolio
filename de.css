@@ -482,7 +482,14 @@ a {
 
 .hero h1 {
     color: var(--white);
-    font-size: clamp(3.5rem, 5vw, 8rem);
+    font-size: clamp(3.5rem, 5vw, 7.5rem);
+    line-height: 0.8;
+    letter-spacing: -5px;
+}
+
+.hero h2 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 4vw, 6.5rem);
     line-height: 0.8;
     letter-spacing: -5px;
 }
