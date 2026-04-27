@@ -418,7 +418,7 @@ a {
     position: absolute;
 
     top: 75%;   
-    right: 30%;
+    right: 25%;
 
     aspect-ratio: 400 / 150;
 
@@ -482,15 +482,15 @@ a {
 
 .hero h1 {
     color: var(--white);
-    font-size: clamp(3.5rem, 5vw, 7.5rem);
+    font-size: clamp(3.5rem, 6vw, 7.5rem);
     line-height: 0.8;
     letter-spacing: -5px;
 }
 
 .hero h2 {
     color: var(--white);
-    font-size: clamp(2.5rem, 4vw, 6.5rem);
-    line-height: 0.8;
+    font-size: clamp(3rem, 3.8vw, 6rem);
+    line-height: 1;
     letter-spacing: -5px;
 }
 
