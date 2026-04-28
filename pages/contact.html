@@ -98,26 +98,26 @@
         <!-- MAIN -->
         <section class="main-section-pages">
 
-            <div class="contact-form">
+            <div class="contact-form-div">
 
                 <!-- FORM SECTION -->
-                <form action="contact.php" method="post" class="login-form">
+                <form id="contact-form" method="POST" class="contact-form">
 
                     <div class="form-fields">
 
                         <label>
                             <span class="small-text">> Name</span>
-                            <input type="text" name="uname" placeholder="Name einfügen" required>
+                            <input type="text" name="name" placeholder="Name einfügen" required>
                         </label>
 
                         <label>
                             <span class="small-text">> E-Mail-Adresse</span>
-                            <input type="text" name="email" placeholder="E-Mail-Adresse einfügen" required>
+                            <input type="email" name="email" placeholder="E-Mail-Adresse einfügen" required>
                         </label>
 
                         <label>
                             <span class="small-text">> Nachricht</span>
-                            <textarea name="entry" placeholder="Nachricht einfügen" required></textarea>
+                            <textarea name="message" placeholder="Nachricht einfügen" required></textarea>
                         </label>
 
                     </div>

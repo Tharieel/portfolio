@@ -129,3 +129,32 @@ cards.forEach(card => {
         resetCard(card);
     });
 });
+
+// =========================
+// CONTACT FORM - EMAILJS
+// =========================
+(function() {
+    emailjs.init("DQFms6sZiEuxYQiyD");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+        emailjs.send("service_dl2msqu", "template_w9a9rvq", {
+        name: this.name.value,
+        email: this.email.value,
+        message: this.message.value,
+        time: new Date().toLocaleString("de-DE", {
+            dateStyle: "short",
+            timeStyle: "short"
+        })
+    })
+    .then(() => {
+        alert("Die Nachricht wurde erfolgreich gesendet!");
+        this.reset();
+    })
+    .catch((error) => {
+        console.log(error);
+        alert("Fehler beim Senden.");
+    });
+});

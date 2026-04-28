@@ -63,7 +63,7 @@
     CONTACT LAYOUT
 ========================= */
 
-.contact-form {
+.contact-form-div {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -74,7 +74,7 @@
     FORM WRAPPER
 ========================= */
 
-.login-form {
+.contact-form {
     display: flex;
     flex-direction: column;
 
@@ -104,8 +104,9 @@
     INPUTS & TEXTAREA
 ========================= */
 
-.login-form input[type="text"],
-.login-form textarea {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
     width: 100%;
     padding: 12px 20px;
 
@@ -120,7 +121,7 @@
     box-sizing: border-box;
 }
 
-.login-form textarea {
+.contact-form textarea {
     height: 150px;
     resize: none;
     overflow-y: auto;
@@ -152,7 +153,7 @@
 }
 
 /* BUTTON STYLE OVERRIDE */
-.login-form button,
+.contact-form button,
 .form-actions a.btn {
     background-color: transparent;
     color: var(--white);
