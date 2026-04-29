@@ -23,7 +23,7 @@
         margin: 1rem 0 0 0 !important;
         width: 100%;
 
-        order: 2;
+        order: 99;
     }
     
     .nav-pages p {
@@ -141,6 +141,15 @@ a:hover {
     display: none;
 }
 
+.p-datascience-card-1 {
+    left: 62%;
+}
+
+.p-datascience-card-text-1 {
+    right: 1%;
+    left: 62%;
+}
+
 .main-section-pages {
     display: flex;
     width: 100%;
@@ -200,6 +209,7 @@ a:hover {
 }
 
 .nav-pages {
+    position: sticky;
     display: flex;
     flex-direction: column;
     margin-top: 16.5rem;
@@ -347,4 +357,65 @@ a:hover {
     /* object-fit: contain; */
     opacity: 0.2;
     z-index: 0;
+}
+
+/* =========================
+    IMPRESSUM
+========================= */
+
+.Impressum-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 2rem 0;
+    color: var(--white);
+}
+
+.Impressum-content h3 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0 0;
+}
+
+.Impressum-content p {
+    font-size: 1rem;
+    color: var(--white);
+    margin: 0;
+}
+
+/* =========================
+    DATENSCHUTZ
+========================= */
+
+.Datenschutzerklärung-Überschrift {
+    font-size: 1.25rem;
+    color: var(--white);
+    margin: 1rem 0 0 0;
+    min-width: 0;
+}
+
+.Datenschutz-content {
+    display: flex;
+    gap: 2rem;
+    margin: 0 3rem 0 0;
+}
+
+.Datenschutz-content-left,
+.Datenschutz-content-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    color: var(--white);
+}
+
+/* Überschriften */
+.Datenschutz-content h3 {
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
+}
+
+/* Text */
+.Datenschutz-content p {
+    font-size: 0.8rem;
 }

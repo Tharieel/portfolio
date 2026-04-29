@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../de.css">
     <link rel="stylesheet" href="pages.css">
     <title>Katharina Kay <> Projekte</title>
@@ -13,73 +10,146 @@
 <body>
     <div class="main-card">
 
-        <!-- HEADER -->
-        <header class="header">
+        <div class="layer layer-bg"></div>
 
-            <div class="logo-name">
-                <h2>Katharina Kay <> Projekte: 3D Earth</h2>
+        <!-- 2. CARDS (floating UI) -->
+        <div class="layer layer-cards">
+            
+            <div class="card card-1 pages-card-1">
+                <div class="card-hinweis">
+                    > Du kannst mich bewegen! Doppelklick = Reset <
+                </div>
             </div>
 
-            <div class="header-right">
-                <li>de</li>
-                <li class="tooltip"><img class="nav-icons" src="../images/svg/earth-outline-weiß.png" alt="World Logo"></li>
-                <li class="tooltip"><img class="nav-icons" src="../images/svg/flashlight-outline-weiß.png" alt="Darklight Logo"></li>
+            <p class="card-1-text pages-card-text-1">
+                > Ich bin Webentwicklerin mit Background in quantitativer Biologie, IT-Consulting und Softwareentwicklung.
+                <br>
+                Ich arbeite an der Schnittstelle von Code, Daten und digitalen Anwendungen.
+                <br>
+                Mein Fokus liegt auf der Entwicklung moderner Webanwendungen im Frontend- und Backend-Bereich.
+                <br>
+                Dabei verbinde ich analytisches Denken aus der Wissenschaft mit praktischer Softwareentwicklung.
+                <br>
+                Ich arbeite an Webanwendungen, 3D-Visualisierungen und ausgewählten Data Science Projekten.
+                <br>
+                Ziel ist es, strukturierte und nutzerzentrierte digitale Lösungen zu entwickeln, die echten Mehrwert schaffen.
+                <br>
+                Funktional & klar. <
+            </p>
+
+            <div class="card card-2 pages-card-2">
+                <div class="card-hinweis">
+                    > Du kannst mich bewegen! Doppelklick = Reset <
+                </div>
             </div>
 
-        </header>
-        
-        <!-- MAIN -->
-        <section class="main-section-pages">
+            <p class="card-2-text pages-card-text-2">
+                > Dieses Portfolio entstand im April 2026 im Rahmen eines intensiven Lern- und Entwicklungsprozesses von Grund auf.
+                <br>
+                Die Seite befindet sich weiterhin im Aufbau.
+                <br>
+                Neue Projekte sind in Arbeit und werden fortlaufend ergänzt. <
+            </p>
 
-            <div class="p-1-1">
+            <div class="card card-3 pages-card-3 p-webdev-card-3">
+                <div class="card-hinweis">
+                    > Du kannst mich bewegen! Doppelklick = Reset <
+                </div>
+            </div>
+
+            <p class="card-3-text pages-card-text-3 p-webdev-card-text-3">
+                > Skillset: HTML, CSS, JavaScript, Python, PHP, WordPress (CMS), 
+                <br>
+                Figma, Git/GitHub, API-Integration.
+                <br>
+                Frontend: HTML, CSS (Flexbox, Grid), JavaScript für interaktive Weboberflächen.
+                <br>
+                Backend: Python, PHP, REST APIs, grundlegende Datenbankkenntnisse (SQL).
+                <br>
+                CMS: WordPress für Website-Erstellung und Anpassung.
+                <br>
+                Design: Figma für UI/UX-Design und Prototyping.
+                <br>
+                Data: Grundlagen in Data Science (Pandas, Datenanalyse). < 
+            </p>
+
+        </div>
+
+        <div class="layer layer-content">
+
+            <!-- HEADER -->
+            <header class="header">
+
+                <div class="logo-name">
+                    <h2>Katharina Kay <> Projekte: 3D Kugel Wireframe</h2>
+                </div>
+
+                <div class="header-right">
+                    <li>de</li>
+                    <li class="tooltip"><img class="nav-icons" src="../images/svg/earth-outline-weiß.png" alt="World Logo"></li>
+                    <li class="tooltip"><img class="nav-icons" src="../images/svg/flashlight-outline-weiß.png" alt="Darklight Logo"></li>
+                </div>
+
+            </header>
+            
+            <!-- MAIN -->
+            <section class="main-section-pages">
+                 
+                <div class="p-1-1">
+
                 <!-- 🌍 3D Earth CONTAINER -->
-                <div id="globe-container"></div>
+                    <div id="globe-container"></div>
 
-                <!-- Tooltip -->
-                <div id="label"></div>
+                    <!-- Tooltip -->
+                        <div id="label"></div>
+                        <div class="description">
+                            
+                            <p>Rotierendes Wireframe 3D-Model mit Features für Websiten.</p>
+                        
+                        </div>
 
-                <div class="description">
-                    <p>#Beschreibung.</p>
                 </div>
-            </div>
 
-            <div class="nav-pages">
-                <div class="btn0-pages">
-                    <button class="btn btn-secondary"><a href="../index.html">Home <</a></button>
+                <div class="nav-pages">
+                    
+                    <div class="btn0-pages">
+                        <button class="btn btn-secondary"><a href="../index.html">Home <</a></button>
+                    </div>
+                    <div class="btn1-pages">
+                        <button class="btn btn-secondary"><a href="contact.html">Kontakt <</a></button>
+                    </div>
+                    <div class="btn2-pages">
+                        <button class="btn btn-secondary"><a href="p-projects-main.html">Projekte <</a></button>
+                    </div>
+                    <div class="btn3-pages">
+                        <button class="btn btn-secondary"><a href="blog.html">Blog <</a></button>
+                    </div>
+
                 </div>
-                <div class="btn1-pages">
-                    <button class="btn btn-secondary"><a href="contact.html">Kontakt <</a></button>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <div class="links">
+                    <li><a href="https://www.linkedin.com/in/katharina-klostermann-10372a310" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/tharieel" target="_blank">Github</a></li>
+                    <li><a href="https://www.instagram.com/katha_mk_" target="_blank">Instagram</a></li>
                 </div>
-                <div class="btn2-pages">
-                    <button class="btn btn-secondary"><a href="p-projects-main.html">Projekte <</a></button>
+
+                <div class="email-impressum">
+                    <li><a href="mailto:business@katharinakay.com">mail:business@katharinakay.com</a></li>
+                    <li><></li>
+                    <li><a href="impressum.html">Impressum</a></li>
                 </div>
-                <div class="btn3-pages">
-                    <button class="btn btn-secondary"><a href="blog.html">Blog <</a></button>
-                </div>
-            </div>
 
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-
-            <div class="links">
-                <li><a href="https://www.linkedin.com/in/katharina-klostermann-10372a310" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/tharieel" target="_blank">Github</a></li>
-                <li><a href="https://www.instagram.com/katha_mk_" target="_blank">Instagram</a></li>
-            </div>
-
-            <div class="email-impressum">
-                <li><a href="mailto:business@katharinakay.com">mail:business@katharinakay.com</a></li>
-                <li><></li>
-                <li><a href="impressum.html">Impressum</a></li>
-            </div>
-
-        </footer>
+            </footer>
         
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/three@0.158/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.158/build/three.min.js"></script>    
     <script src="e-1-earth3D.js"></script>
 
     <div class="custom-cursor"></div>
