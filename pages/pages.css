@@ -367,20 +367,23 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0rem;
     margin: 2rem 0;
     color: var(--white);
 }
 
 .Impressum-content h3 {
-    font-size: 1.2rem;
-    margin: 2rem 0 0 0;
+    font-size: 1rem;
+    margin: 1rem 0 0 0;
 }
 
 .Impressum-content p {
-    font-size: 1rem;
-    color: var(--white);
-    margin: 0;
+    font-size: 0.8rem;
+}
+
+.Datenschutzerklärung-Link {
+    font-size: 0.8rem;
+    text-decoration: underline;
 }
 
 /* =========================
