@@ -334,7 +334,7 @@ a {
     transition: all 0.6s cubic-bezier(.2,.8,.2,1);
 }
 
-.card::active {
+.card:active {
     cursor: grabbing;
 }
 
@@ -566,7 +566,7 @@ a {
     left: 50%;
     top: 100%;
 
-    height: clamp(10px, 100vw, 240px);
+    height: clamp(10px, 100vw, 244px);
 
     border-left: 2px dotted var(--white);
 
