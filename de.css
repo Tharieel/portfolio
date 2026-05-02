@@ -74,16 +74,6 @@ a {
     }
 }
 
-@media (max-width: 1716px) {
-    .btn-1::before {
-        top: -360% !important;
-        height: 160px !important;
-    }
-    .btn-3::after {
-        height: 230px !important;
-    }
-}
-
 @media (max-width: 1450px) {
     .card-3 {
         transform: translateX(-100px);
@@ -297,7 +287,7 @@ a {
 
     width: min(95%, 1700px);
     aspect-ratio: 16 / 9;
-    min-height: 900px;          
+    height: 950px;          
     margin: 8rem auto;
     padding: 1rem;
 
