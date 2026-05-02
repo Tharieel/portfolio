@@ -35,7 +35,7 @@
     }
 
     /* CONTACT darunter */
-    .contact-form {
+    .contact-form-div {
         display: flex;
         flex-direction: column !important;
 
@@ -47,6 +47,7 @@
     .contact-text {
         line-height: 1 !important;
         opacity: 0.4;
+        padding: 1rem 0 0 0 !important;
     }
 
     /* Cards ausblenden */

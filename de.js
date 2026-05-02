@@ -140,21 +140,21 @@ cards.forEach(card => {
 document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-        emailjs.send("service_dl2msqu", "template_w9a9rvq", {
+    console.log("Formular gesendet");
+
+    emailjs.send("service_dl2msqu", "template_w9a9rvq", {
         name: this.name.value,
         email: this.email.value,
         message: this.message.value,
-        time: new Date().toLocaleString("de-DE", {
-            dateStyle: "short",
-            timeStyle: "short"
-        })
+        time: new Date().toLocaleString("de-DE")
     })
-    .then(() => {
+    .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
         alert("Die Nachricht wurde erfolgreich gesendet!");
         this.reset();
     })
     .catch((error) => {
-        console.log(error);
+        console.log("FAILED...", error);
         alert("Fehler beim Senden.");
     });
 });
