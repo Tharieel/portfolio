@@ -202,6 +202,8 @@ a:hover {
     width: 900px;
 
     margin: auto 0;
+
+    pointer-events: none;
 }
 
 .p-card  {
@@ -225,6 +227,8 @@ a:hover {
     overflow: hidden;
 
     transition: 0.3s ease;
+
+    pointer-events: auto;
 }
 
 .p-card:hover {

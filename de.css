@@ -296,20 +296,25 @@ a {
     box-shadow: 5px 5px 5px var(--white);
     
     background: transparent;
-    z-index: 1;
+    z-index: 0;
 }
 
 .layer {
-    inset: 0;
+    position: absolute;
+    inset: 0;    /* top: 0;. right: 0;, bottom: 0;, left: 0; */
 }
 
-.layer-cards {
-    z-index: 5;
+.layer-bg {
+    z-index: 1;
 }
+
+/* .layer-cards {
+    z-index: 100;
+} */
 
 .layer-content {
     position: relative;
-    z-index: 3;
+    z-index: 10;
 
     display: flex;
     flex-direction: column;
@@ -325,7 +330,7 @@ a {
     border-radius: 12px;
     box-shadow: 5px 5px 5px var(--white);
 
-    z-index: 5;
+    z-index: 100;
 
     overflow: hidden;
     user-select: none;
@@ -377,7 +382,7 @@ a {
     bottom: 10px;
     left: 10px;
 
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     color: white;
     font-family: monospace;
 
@@ -493,6 +498,7 @@ a {
     display: flex;
     flex-direction: column;
     flex: 1;
+    z-index: 5;
 }
 
 .hero {
