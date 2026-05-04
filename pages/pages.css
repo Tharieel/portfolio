@@ -80,12 +80,23 @@
         overflow: hidden;
     }
 
-    .p-1-1 {
-        order: 1;
-    }
-
     #global-container {
         width: none !important;
+    }
+
+    .card-code-python {
+        display: none;
+    }
+
+    .p-1-1 {
+        display: none !important;
+    }
+
+    .media-query-text {
+        text-align: center !important;
+        margin: 10rem 0 !important;
+        color: var(--white) !important;
+        order: 2;
     }
 }
 
@@ -169,9 +180,15 @@ a:hover {
 }
 
 .main-section-pages {
+    position: relative;
     display: flex;
     height: 100vh;
     width: 100%;
+}
+
+.media-query-text {
+    position: absolute;
+    z-index: 0;
 }
 
 .p-cards-container {
@@ -331,11 +348,6 @@ a:hover {
     max-width: 70rem;
 }
 
-.card-wrapper {
-    position: relative;
-    height: 1500px;
-}
-
 .card-code-python {
     position: absolute;
     background: var(--black);
@@ -347,8 +359,8 @@ a:hover {
     height: 1000px;
     width: 750px;
 
-    top: 58rem;
-    left: 33rem;
+    top: 86%;
+    left: 23%;
 
     overflow-y: auto;
     overflow-x: auto;
@@ -369,6 +381,14 @@ a:hover {
     border-color: royalblue;
 }
 
+.c-img {
+    width: 100%;
+    max-width: 1000px;
+    height: 50rem;
+    /* object-fit: contain; */
+    opacity: 0.2;
+    z-index: 0;
+}
 .c-img {
     width: 100%;
     max-width: 1000px;
