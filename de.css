@@ -113,6 +113,9 @@ a {
         text-align: center;
         align-items: center;
     }
+    .hero p {
+        margin: 8rem 0 !important;
+    }
     .hero-text-btn2 {
         font-size: 2.5rem !important;
     }
@@ -137,14 +140,13 @@ a {
         display: none;
     }
     .card-1-text {
-        left: 0 !important;
+        display: none;
     }
     .card-2-text {
-        left: 60% !important;
-        top: 35% !important;
+        display: none;
     }
     .card-3-text {
-        top: 55% !important;
+        display: none;
     }
     .footer {
         flex-direction: column;
@@ -554,7 +556,7 @@ a {
     display: flex;
     align-items: center;
 
-    width: calc(100% - 58.5%); /* startet bei left 60% */
+    width: calc(100% - 59%); /* startet bei left 60% */
 }
 
 .line { /* btn-2 */
